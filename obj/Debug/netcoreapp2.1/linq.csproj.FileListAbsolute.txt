@@ -1,0 +1,11 @@
+/Users/alejandro/Workspace/csharp/exercises/linq/bin/Debug/netcoreapp2.1/linq.deps.json
+/Users/alejandro/Workspace/csharp/exercises/linq/bin/Debug/netcoreapp2.1/linq.runtimeconfig.json
+/Users/alejandro/Workspace/csharp/exercises/linq/bin/Debug/netcoreapp2.1/linq.runtimeconfig.dev.json
+/Users/alejandro/Workspace/csharp/exercises/linq/bin/Debug/netcoreapp2.1/linq.dll
+/Users/alejandro/Workspace/csharp/exercises/linq/bin/Debug/netcoreapp2.1/linq.pdb
+/Users/alejandro/Workspace/csharp/exercises/linq/obj/Debug/netcoreapp2.1/linq.csprojAssemblyReference.cache
+/Users/alejandro/Workspace/csharp/exercises/linq/obj/Debug/netcoreapp2.1/linq.csproj.CoreCompileInputs.cache
+/Users/alejandro/Workspace/csharp/exercises/linq/obj/Debug/netcoreapp2.1/linq.AssemblyInfoInputs.cache
+/Users/alejandro/Workspace/csharp/exercises/linq/obj/Debug/netcoreapp2.1/linq.AssemblyInfo.cs
+/Users/alejandro/Workspace/csharp/exercises/linq/obj/Debug/netcoreapp2.1/linq.dll
+/Users/alejandro/Workspace/csharp/exercises/linq/obj/Debug/netcoreapp2.1/linq.pdb
