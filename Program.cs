@@ -37,19 +37,48 @@ namespace linq {
                 96
             };
 
-            IEnumerable<int> fourSixMultiples = numbers.Where(
+            IEnumerable<int> fourSixMultiples = numbers.Where (
                 n => n % 4 == 0 && n % 6 == 0);
 
             // foreach (int n in fourSixMultiples) {
             //     Console.WriteLine(n);
             // }
 
-
-
-
             ///Part 2
 
+            // Order these student names alphabetically, in descending order (Z to A)
+            List<string> names = new List<string> () {
+                "Heather",
+                "James",
+                "Xavier",
+                "Michelle",
+                "Brian",
+                "Nina",
+                "Kathleen",
+                "Sophia",
+                "Amir",
+                "Douglas",
+                "Zarley",
+                "Beatrice",
+                "Theodora",
+                "William",
+                "Svetlana",
+                "Charisse",
+                "Yolanda",
+                "Gregorio",
+                "Jean-Paul",
+                "Evangelina",
+                "Viktor",
+                "Jacqueline",
+                "Francisco",
+                "Tre"
+            };
 
+            IEnumerable<string> nameInDesc = from name in names
+
+                OrderByDescending name
+                select name
+            ;
 
         }
     }
