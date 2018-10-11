@@ -75,11 +75,58 @@ namespace linq {
             };
 
             IEnumerable<string> nameInDesc = from name in names
+            orderby name
+            orderby name descending
+            select name;
 
-                OrderByDescending name
-                select name
-            ;
+            // foreach (string name in nameInDesc) {
+            //     Console.WriteLine(name);
+            // }
 
+            // Build a collection of these numbers sorted in ascending order
+            List<int> newNumbers = new List<int>() {
+                15,
+                8,
+                21,
+                24,
+                32,
+                13,
+                30,
+                12,
+                7,
+                54,
+                48,
+                4,
+                49,
+                96
+            };
+
+            IEnumerable<int> newNumbersInAscend = from num in newNumbers
+                orderby num ascending
+                select num;
+            
+            // foreach (int num in newNumbersInAscend) {
+            //     Console.WriteLine(num);
+            // }
+
+
+
+            ///Part 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+ 
         }
     }
 }
