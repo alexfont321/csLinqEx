@@ -188,6 +188,13 @@ namespace linq {
                 14
             };
 
+        
+        List<int> nonSquares = wheresSquaredo.TakeWhile(n => Math.Sqrt(n) % 1 != 0).ToList();
+            foreach (var item in nonSquares)
+            {
+                Console.WriteLine(item.ToString());
+            }
+
         }
     }
 }
