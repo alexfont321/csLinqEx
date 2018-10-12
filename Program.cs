@@ -3,6 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace linq {
+
+    public class Bank {
+        public string Symbol { get; set; }
+        public string Name { get; set; }
+    }
+    public class MillionaireEntry {
+        public string Name { get; set; }
+        public double Balance { get; set; }
+        public string Bank { get; set; }
+        public IEnumerable<string> Millionaires { get; set; }
+
+    }
     class Program {
         static void Main (string[] args) {
 
@@ -188,11 +200,55 @@ namespace linq {
                 14
             };
 
-        
-        List<int> nonSquares = wheresSquaredo.TakeWhile(n => Math.Sqrt(n) % 1 != 0).ToList();
-            foreach (var item in nonSquares)
-            {
-                Console.WriteLine(item.ToString());
+            List<int> nonSquares = wheresSquaredo.TakeWhile (n => Math.Sqrt (n) % 1 != 0).ToList ();
+            // foreach (var item in nonSquares)
+            // {
+            //     Console.WriteLine(item.ToString());
+            // }
+
+            List<Customer> customers = new List<Customer> () {
+                new Customer () { Name = "Bob Lesman", Balance = 80345.66, Bank = "FTB" },
+                new Customer () { Name = "Joe Landy", Balance = 9284756.21, Bank = "WF" },
+                new Customer () { Name = "Meg Ford", Balance = 487233.01, Bank = "BOA" },
+                new Customer () { Name = "Peg Vale", Balance = 7001449.92, Bank = "BOA" },
+                new Customer () { Name = "Mike Johnson", Balance = 790872.12, Bank = "WF" },
+                new Customer () { Name = "Les Paul", Balance = 8374892.54, Bank = "WF" },
+                new Customer () { Name = "Sid Crosby", Balance = 957436.39, Bank = "FTB" },
+                new Customer () { Name = "Sarah Ng", Balance = 56562389.85, Bank = "FTB" },
+                new Customer () { Name = "Tina Fey", Balance = 1000000.00, Bank = "CITI" },
+                new Customer () { Name = "Sid Brown", Balance = 49582.68, Bank = "CITI" }
+            };
+
+            IEnumerable<MillionaireEntry> groupedByBank = customers.Where (c => c.Balance >= 1000000).GroupBy (
+                p => p.Bank, // Group banks
+                p => p.Name, // by millionaire names
+                (bank, millionaires) => new MillionaireEntry () {
+                    Bank = bank,
+                        Millionaires = millionaires
+                }
+            );
+
+            // foreach (var item in groupedByBank) {
+            //     Console.WriteLine ($"{item.Bank}: {string.Join(" and ", item.Millionaires.Count())}");
+            // }
+
+            List<Bank> banks = new List<Bank>() {
+                new Bank(){ Name="First Tennessee", Symbol="FTB"},
+                new Bank(){ Name="Wells Fargo", Symbol="WF"},
+                new Bank(){ Name="Bank of America", Symbol="BOA"},
+                new Bank(){ Name="Citibank", Symbol="CITI"},
+            };
+
+            List<Customer> millionaireReport = customers.Where (c => c.Balance >= 1000000)
+                .Select (c => new Customer () {
+                    Name = c.Name,
+                        Bank = banks.Find(b => b.Symbol == c.Bank).Name,
+                        Balance = c.Balance
+                })
+                .ToList ();
+
+            foreach (Customer customer in millionaireReport) {
+                Console.WriteLine ($"{customer.Name} at {customer.Bank}");
             }
 
         }
